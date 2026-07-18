@@ -9,12 +9,14 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
+    needs: build
     steps:
       - name: test steps
         run: echo "this is test step of multi jobs workflow"
 
   deploy:
     runs-on: ubuntu-latest
+    needs: test
     steps:
       - name: deploy steps
         run: echo "this is deploy steps of multi job workflow"
