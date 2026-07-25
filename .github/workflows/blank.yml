@@ -15,5 +15,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: build steps
-        run: echo "hello, ${{ vars.MY_NAME }}, this is variable"
-        run: echo "my dirty secret is ${{ secrets.MY_DIRTY_SECRET }}"
+        run: | 
+        echo "hello, ${{ vars.MY_NAME }}, this is variable"
+        echo "my dirty secret is ${{ secrets.MY_DIRTY_SECRET }}"
