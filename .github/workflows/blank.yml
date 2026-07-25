@@ -1,8 +1,18 @@
 name: hello-world
-on: push
+on:
+  push:
+    branches:
+      - main
+      - develop
+      - 'release/**'
+  pull_request:
+    types:
+      - opened
+    branches:
+      - main
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: build steps
-        run: echo "event trigger push"
+        run: echo "event trigger pull request and its types"
