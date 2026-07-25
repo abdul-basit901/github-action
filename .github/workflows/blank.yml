@@ -1,22 +1,8 @@
 name: hello-world
-on: workflow_dispatch
+on: push
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: build steps
-        run: echo "this is build steps of multi jobs workflow"
-
-  test:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: test steps
-        run: echo "this is test step of multi jobs workflow"
-
-  deploy:
-    runs-on: ubuntu-latest
-    needs: test
-    steps:
-      - name: deploy steps
-        run: echo "this is deploy steps of multi job workflow"
+        run: echo "event trigger: push"
