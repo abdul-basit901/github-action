@@ -6,6 +6,8 @@ on:
       - develop
       - 'release/**'
   pull_request:
+    types:
+      - opened
     branches:
       - main
 jobs:
@@ -13,4 +15,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: build steps
-        run: echo "event trigger push"
+        run: echo "event trigger pull request and its types"
