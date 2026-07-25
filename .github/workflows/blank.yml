@@ -15,4 +15,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: build steps
-        run: echo "event trigger pull request and its types"
+        run: echo "hello, ${{ var.MY_NAME }}, this is variable"
