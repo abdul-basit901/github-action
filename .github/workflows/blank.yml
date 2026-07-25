@@ -15,4 +15,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: build steps
-        run: echo "hello, ${{ var.MY_NAME }}, this is variable"
+        run: echo "hello, ${{ vars.MY_NAME }}, this is variable"
