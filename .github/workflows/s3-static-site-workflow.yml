@@ -14,6 +14,6 @@ jobs:
           aws-region: us-east-1
       - name: code static code to s3
         run: |
-          aws s3 sync ./ s3://github-action-demo-871866571134-us-east-1-an/github-action/ \
+          aws s3 sync ./ s3://github-action-demo-871866571134-us-east-1-an/ \
           --exclude "*" \
           --include "index.html"
