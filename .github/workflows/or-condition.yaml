@@ -5,7 +5,7 @@ on:
       - main
       - development
 jobs:
-  or-condition-job
+  or-condition-job:
   runs-on: ubuntu-latest
   steps:
     - name: this is or condition demo step
