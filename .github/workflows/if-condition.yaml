@@ -1,0 +1,13 @@
+name: if demo
+on:
+  push:
+    branches:
+      - main
+      - development
+jobs:
+  if-demo:
+    runs-on: ubuntu latest
+    steps:
+      - name:if conditon step one
+        if: github.ref_name == 'main'
+        run: echo "this commond will run if if condition is true"
