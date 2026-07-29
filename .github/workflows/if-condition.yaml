@@ -6,8 +6,8 @@ on:
       - development
 jobs:
   if-demo:
-    runs-on: ubuntu latest
+    runs-on: ubuntu-latest
     steps:
-      - name:if conditon step one
+      - name: if conditon step one
         if: github.ref_name == 'main'
         run: echo "this commond will run if if condition is true"
