@@ -2,8 +2,8 @@ name: output demo
 on: push
 jobs:
   job1: 
-  outputs:
-    version: ${{steps.step1.outputs.version}}
+    outputs:
+      version: ${{steps.step1.outputs.version}}
     runs-on: ubuntu-latest
     steps:
       - name: step one
