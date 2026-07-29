@@ -1,7 +1,9 @@
 name: output demo
 on: push
 jobs:
-  job1:
+  job1: 
+  outputs:
+    version: ${{steps.step1.outputs.version}}
     runs-on: ubuntu-latest
     steps:
       - name: step one
@@ -10,3 +12,10 @@ jobs:
       
       - name: step two
         run: echo "this version is from step one ${{ steps.step1.outputs.version }}"
+  job2:
+    needs: job1
+    runs-on: utuntu-latest
+    steps:
+      - name: job2 step one
+        run: echo "this is the verion from job ouput ${{needs.job1.outputs.version}}"
+
