@@ -6,8 +6,8 @@ on:
       - development
 jobs:
   or-condition-job:
-  runs-on: ubuntu-latest
-  steps:
-    - name: this is or condition demo step
-      if: github.actor == 'abdul-basit901' || github.actor == 'teacher test'
-      run: echo " this command will run if or condition fullfiled and the user name is ${{ github.actor }}" 
+    runs-on: ubuntu-latest
+    steps:
+      - name: this is or condition demo step
+        if: github.actor == 'abdul-basit901' || github.actor == 'teacher test'
+        run: echo " this command will run if or condition fullfiled and the user name is ${{ github.actor }}" 
