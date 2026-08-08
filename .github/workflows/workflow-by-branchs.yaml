@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: code for production
-        runs: echo "code deploying on prodcution"
+        run: echo "code deploying on prodcution"
 
   success-notify:
     needs: ['quality-check', 'dev-env-deploy', 'prod-deployment']
