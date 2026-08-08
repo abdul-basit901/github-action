@@ -9,4 +9,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: build step
-        run: echo "this is build to  job"
+        run: echo "thids is build to  job"
