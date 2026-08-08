@@ -1,0 +1,22 @@
+name: job level if conditon
+on:
+  push:
+    - main
+  pull_request:
+    types:
+      - opened
+      - synchronize
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - name: build step
+        run: echo "thids is build to  job"
+
+  deploy:
+    runs-on: ubunto-latest
+    if: github.event_name == 'push' && github.ref_name == 'main'
+    steps:
+      - name: deploy step
+        run: echo "testesteztwdt"
