@@ -1,0 +1,44 @@
+name: job run by branch selection
+on:
+  push:
+    branches:
+      - main
+      - develop
+      - feature/**
+jobs:
+  quality-check:
+    if: startsWith(github.ref_name, 'feature') && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - name: quality check code
+        run: echo "code quality check is performing"
+  dev-env-deploy:
+    if: github.re_name == 'develop' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - name: development env code
+        run: echo "code is deploying on development evn"
+
+  prod-deployment:
+    if: github.ref_name == 'main' && github.event_name 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - name: code for production
+        runs: echo "code deploying on prodcution"
+
+  success-notify:
+    needs: ['quality-check', 'dev-env-deploy', 'prod-deployment']
+    if: always() && !failure()
+    runs-on: ubuntu-latest
+    steps:
+      - name: sent success notification
+        run: echo "job completed successfully"
+
+  failure-notify:
+    needs: ['quality-check', 'dev-env-deploy', 'prod-deployment']
+    if: failure()
+    runs-on: ubuntu-latest
+    steps:
+      - name: sent failure notification
+        run: echo "job failed"
+ 
