@@ -13,7 +13,7 @@ jobs:
       - name: quality check code
         run: echo "code quality check is performing"
   dev-env-deploy:
-    if: github.re_name == 'develop' && github.event_name == 'push'
+    if: github.ref_name == 'develop' && github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
       - name: development env code
