@@ -1,7 +1,8 @@
 name: job level if conditon
 on:
   push:
-    - main
+    branches:
+      - main
   pull_request:
     types:
       - opened
