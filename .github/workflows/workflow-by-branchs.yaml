@@ -20,7 +20,7 @@ jobs:
         run: echo "code is deploying on development evn"
 
   prod-deployment:
-    if: github.ref_name == 'main' && github.event_name 'push'
+    if: github.ref_name == 'main' && github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
       - name: code for production
